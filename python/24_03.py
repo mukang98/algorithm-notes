@@ -36,7 +36,31 @@ bool_index = a % 2 == 0 #[ True False  True False  True False  True False  True 
 chosen_a_bool = a[bool_index] #[0 2 4 6 8]
 # %%
 # ================================================================= #
-#                        2.Property Decorator                       #
+#                        2.Decorator                                #
+# ================================================================= #
+#In Python, Decorator is a special type of function that can modify or enhance the functionality of other functions rather than change its original code.
+# Decorators are marked with @ symbol before function definiton. They allow you add addtional functionalities in a declarative way, 
+# such as performance monitoring, model saving and loading, logging, etc.
+import time 
+def time_decorator(func):
+#accept 'func' as input
+    def wrapper(*args, **kwargs):
+    #'*args' and '**kwargs' are used to accommodate any inputs.       
+        start_time = time.time()
+        func(*args, **kwargs)
+        end_time = time.time()
+        print(f'{func.__name__} executed in {end_time - start_time} seconds')
+    return wrapper
+
+@time_decorator
+def say_hello(name):
+    time.sleep(2)
+    print(f'Good morning, {name}!')
+
+say_hello('Wayne')
+#%%
+# ================================================================= #
+#                        2.1 Property Decorator                     #
 # ================================================================= #
 #Property decorater allows developer to accesss a class method as if it were an attribute.
 #It can make the code more concise and easier to understand and maintain, while enhancing data encapsulation and security.
