@@ -1,0 +1,6 @@
+Type: animal
+Location: land
+Name:
+- dog
+- cat
+- rabbit

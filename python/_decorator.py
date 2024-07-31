@@ -1,42 +1,6 @@
-"""
-Some Python skills and knowledge 
-"""
-# ================================================================= #
-#                        1.Fancy Indexing                           #
-# ================================================================= #
-# Fancy Indexing is an advanced indexing method in Numpy, which is still available in pytorch.
-#%%
-#Import needed library
-import numpy as np
-#%%
-#Usage 1 : 1-D Arrays
-#Create a 1-D array
-a = np.arange(10)
-#Using fancy indexing
-chosen_a = a[[0, 3, 7]] #[0 3 7]
-print(chosen_a)
-# %%
-#Usage 2 : 2-D Arrays
-#Create a 2-D array
-b = np.arange(24).reshape(4,6)
-print(b)
-#Using fancy indexing
-chosen_b = b[[1,2],[3,4]] #[ 9 16]
-print(chosen_b)
-# %%
-#Usage 3: Mixing fancy indexing and Slicing
-#Using fancy indexing
-chosen_b_mix = b[1:3,[3,4]] #[[9 10],[15 16]]
-print(chosen_b_mix)
-# %%
-#Usage 4: Bool indexing
-#Create a bool array
-bool_index = a % 2 == 0 #[ True False  True False  True False  True False  True False]
-#Using fancy indexing
-chosen_a_bool = a[bool_index] #[0 2 4 6 8]
 # %%
 # ================================================================= #
-#                        2.Decorator                                #
+#                        1.Decorator                                #
 # ================================================================= #
 #In Python, Decorator is a special type of function that can modify or enhance the functionality of other functions rather than change its original code.
 # Decorators are marked with @ symbol before function definiton. They allow you add addtional functionalities in a declarative way, 
@@ -60,7 +24,7 @@ def say_hello(name):
 say_hello('Wayne')
 #%%
 # ================================================================= #
-#                        2.1 Property Decorator                     #
+#                        1.1 Property Decorator                     #
 # ================================================================= #
 #Property decorater allows developer to accesss a class method as if it were an attribute.
 #It can make the code more concise and easier to understand and maintain, while enhancing data encapsulation and security.
