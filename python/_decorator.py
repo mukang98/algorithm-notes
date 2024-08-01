@@ -33,11 +33,11 @@ class Person:
         self._name = name  # "_" represents _name is a protected attribute
 
     @property
-    def set_name(self):
+    def name(self):
         """Getter method, return _name attribute value"""
         return self._name
 
-    @set_name.setter
+    @name.setter
     def set_name(self, value):
         """Setter method, set the value of _name attribute"""
         if isinstance(value, str) and len(value) > 0:
@@ -45,7 +45,7 @@ class Person:
         else:
             raise ValueError("Name must be a non-empty string")
 
-    @set_name.deleter
+    @name.deleter
     def set_name(self):
         """Deleter method, delete the _name attribute"""
         del self._name
@@ -53,18 +53,18 @@ class Person:
 person = Person("wayne")
 #%%
 #Accsess this class method as if it were a attribute.
-print(person.set_name) #wayne 
+print(person.name) #Accsess the 'name' attribute using the property getter. This protects the _name attribute by not allowing direct access.
 #%%
 #Change the protected attribute
-person.set_name = "Bob"
-print(person.set_name) #Bob
+person.name = "Bob"
+print(person.name) #Bob
 #%%
 #In this case, .setter does concrete limitation on assignment of the attribute to ensure the security.
-person.set_name = 123 
-print(person.set_name) #ValueError: Name must be a non-empty string
+person.name = 123 
+print(person.name) #ValueError: Name must be a non-empty string
 #%%
 #delete the protected attribute
-del person.set_name
+del person.name
 #%%
 #In thic case, property decorater reduce the number of explicit attributes making the code more concise.
 class Circle:

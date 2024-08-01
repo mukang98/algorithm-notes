@@ -6,14 +6,14 @@
 #Import needed library
 import numpy as np
 #%%
-#Usage 1 : 1-D Arrays
+### Usage 1 : 1-D Arrays ###
 #Create a 1-D array
 a = np.arange(10)
 #Using fancy indexing
 chosen_a = a[[0, 3, 7]] #[0 3 7]
 print(chosen_a)
 # %%
-#Usage 2 : 2-D Arrays
+### Usage 2 : 2-D Arrays ###
 #Create a 2-D array
 b = np.arange(24).reshape(4,6)
 print(b)
@@ -21,12 +21,12 @@ print(b)
 chosen_b = b[[1,2],[3,4]] #[ 9 16]
 print(chosen_b)
 # %%
-#Usage 3: Mixing fancy indexing and Slicing
+### Usage 3: Mixing fancy indexing and Slicing ###
 #Using fancy indexing
 chosen_b_mix = b[1:3,[3,4]] #[[9 10],[15 16]]
 print(chosen_b_mix)
 # %%
-#Usage 4: Bool indexing
+### Usage 4: Bool indexing ###
 #Create a bool array
 bool_index = a % 2 == 0 #[ True False  True False  True False  True False  True False]
 #Using fancy indexing
