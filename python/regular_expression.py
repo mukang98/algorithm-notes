@@ -36,7 +36,7 @@ sample_input_2 = [
 ]
 pattern2 = r'\d+'
 for item in sample_input_2:
-    result = re.findall(pattern2, item) # re.match() requires the begining of the string matches the regex.
+    result = re.findall(pattern2, item) # Find all occurrences of numbers in the current string using the regular expression and return a list of matched numbers
     print(result)
 # %%
 """
@@ -53,7 +53,7 @@ sample_input_3 = [
 ] #match the first three but not the last two.
 
 # pattern3 = r'^\w+[@]\w+\.(co|com)$'  \w matches only letters, numbers, and underscores, so it won't match email addresses that contain '.' in the local part (before the @ symbol).
-pattern3 = r'^=[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(co|com)$'
+pattern3 = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(co|com)$'
 for item in sample_input_3:
     result = re.match(pattern3, item) 
     print(result)
