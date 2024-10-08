@@ -38,7 +38,7 @@ class Person:
         return self._name
 
     @name.setter
-    def set_name(self, value):
+    def name(self, value):
         """Setter method, set the value of _name attribute"""
         if isinstance(value, str) and len(value) > 0:
             self._name = value
@@ -46,7 +46,8 @@ class Person:
             raise ValueError("Name must be a non-empty string")
 
     @name.deleter
-    def set_name(self):
+    def name(self):
+        #在 Python 中使用 @property 装饰器时，getter、setter 和 deleter 方法的名字必须和属性名一致。
         """Deleter method, delete the _name attribute"""
         del self._name
 
