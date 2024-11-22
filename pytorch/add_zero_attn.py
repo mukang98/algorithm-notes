@@ -16,7 +16,7 @@ embedding_dim = 8
 batch_size = 1
 num_heads = 2
 seq_len = 4 #N_target
-net = torch.nn.MultiheadAttention(embedding_dim, num_heads, add_zero_attn=False)
+net = torch.nn.MultiheadAttention(embedding_dim, num_heads, add_zero_attn=True)
 
 mask_dummpy = torch.from_numpy(np.array([[True, True, True, True],
                                   [False, True, True, True],
